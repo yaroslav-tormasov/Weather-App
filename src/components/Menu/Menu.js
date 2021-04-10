@@ -2,6 +2,9 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Time from '../Time/Time';
+import {NavLink} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,10 +17,12 @@ export default function SimpleMenu() {
         setAnchorEl(null);
     };
 
+
+
     return (
-        <div>
+        <div className="Menu">
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                Open Menu
+                Menu
             </Button>
             <Menu
                 id="simple-menu"
@@ -26,8 +31,13 @@ export default function SimpleMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}>Clock</MenuItem>
-                <MenuItem onClick={handleClose}>Weather</MenuItem>
+
+                <MenuItem onClick={handleClose}  title={'Time'}>
+                    <NavLink to="/time">Time</NavLink>
+                </MenuItem>
+                {/*<MenuItem onClick={handleClose} title={'Weather'}>*/}
+                {/*    Weather*/}
+                {/*</MenuItem>*/}
             </Menu>
         </div>
     );

@@ -1,16 +1,19 @@
 import React from 'react'
 import './App.css';
 import Menu from "./components/Menu/Menu";
-import Clock from "./components/Clock";
-
+import {BrowserRouter, Route} from "react-router-dom";
+import Time from "./components/Time/Time"
 
 
 function App() {
   return (
-      <div>
+      <BrowserRouter>
+      <div className="App">
           <Menu />
+          <Route path={"/Time"} render={() => <Time/>}/>
       </div>
-  );
-};
+      </BrowserRouter>
+  )
+}
 
 export default App;
