@@ -1,4 +1,6 @@
 .App {
     display: flex;
     justify-content: center;
+    background-image: url(img/background-clouds.jpg);
+    background-size: cover;
 }
