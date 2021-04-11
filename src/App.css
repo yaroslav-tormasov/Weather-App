@@ -8,5 +8,7 @@ body {
     background-image: url(img/background-clouds.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
 }
 
