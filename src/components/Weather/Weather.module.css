@@ -5,10 +5,10 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    width: 460px;
-    height: 320px;
+    width: 400px;
+    height: 250px;
     background: #FAFAFA;
-    box-shadow: 0px 5px 27px 1px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 5px 27px 1px rgba(0, 0, 0, 0.20);
     border-radius: 15px;
 
     padding: 26px 38px;
@@ -19,7 +19,7 @@
 
 }
 .weather:hover{
-    box-shadow: 0px 5px 17px 1px rgba(0, 0, 0, 0.1);  
+    box-shadow: 0 5px 17px 1px rgba(0, 0, 0, 0.1);
 }
 .location{
     font-weight: 500;
@@ -27,8 +27,8 @@
     line-height: 33px;
     letter-spacing: 0.01em;
     color: #385774;
-    margin-bottom: 58px;
 }
+
 .mainInfo{
     display: flex;
     align-items: center;
@@ -65,15 +65,9 @@
     right: 15px;
     top: 15px;
 }
-.button{
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: hsl(338deg 72% 42%);
-    color: #FAFAFA;
-    font-size: 15px;
+button.button{
+    color: darkred;
 }
-
 
 @media (max-width:600px){
     .weather{

@@ -4,7 +4,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {NavLink} from 'react-router-dom';
 
-
 export default function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -20,7 +19,8 @@ export default function SimpleMenu() {
 
     return (
         <div className="Menu">
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <Button style={ {backgroundColor: "white"} }
+            size="large" variant="contained"  aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                Меню
             </Button>
             <Menu
@@ -31,7 +31,7 @@ export default function SimpleMenu() {
                 onClose={handleClose}
             >
                 <MenuItem onClick={handleClose}  title={'Главная'}>
-                    <NavLink to="/home">Главная</NavLink>
+                    <NavLink to="/">Главная</NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleClose}  title={'Время'}>
                     <NavLink to="/time">Время</NavLink>

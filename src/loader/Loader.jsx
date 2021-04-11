@@ -12,7 +12,6 @@ let Loader = () => {
                 <div></div>
             </div>
         </div>
-   
     )
 }
 

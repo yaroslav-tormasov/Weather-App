@@ -1,9 +1,9 @@
+import React from 'react';
 import s from './Searching.module.css';
 
 const Searching = (props) => {
     return(
         <div className = {s.modal}>
-            <div className = {s.modal__inner}>
                 <form onSubmit = {(e) => {
                     e.preventDefault();
                     let city = e.target.cityName.value.trim();
@@ -13,10 +13,9 @@ const Searching = (props) => {
                         props.setIsSearching(false);
                     }
                 }} className = {s.form}>
-                    <input name = "cityName" type="text" className = {s.input} placeholder = "Введите место..."/>
+                    <input name = "cityName" type="text" className = {s.input} placeholder = "Введите город..."/>
                     <button type = 'submit' className = {s.button} >Поиск</button>
                 </form>
-            </div>
         </div>
     )
 }

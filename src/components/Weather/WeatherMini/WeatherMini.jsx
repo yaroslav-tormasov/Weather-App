@@ -1,6 +1,5 @@
 import s from './WeatherMini.module.css';
 
-import cloudyDay from '../../../img/cloudy-day.svg';
 import cloudyNight from '../../../img/cloudy-night.svg';
 import thunder from '../../../img/thunder.svg';
 import drizzle from '../../../img/drizzle.svg';

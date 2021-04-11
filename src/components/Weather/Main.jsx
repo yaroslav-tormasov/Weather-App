@@ -11,7 +11,6 @@ const Main = (props) => {
             weather = {props.currentGeo.weather}
             feels_like = {props.currentGeo.feels_like}
             icon = {props.currentGeo.icon}
-            setWeekForecast = {props.setWeekForecast}
             />
 
             {props.locations.map( location =>  

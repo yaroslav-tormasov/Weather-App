@@ -1,6 +1,8 @@
 import s from './Weather.module.css';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from '@material-ui/icons/Delete';
 
-import cloudyDay from './../../img/cloudy-day.svg';
 import cloudyNight from './../../img/cloudy-night.svg';
 import thunder from './../../img/thunder.svg';
 import drizzle from './../../img/drizzle.svg';
@@ -44,7 +46,7 @@ const Weather = (props) => {
             <div className = {s.weather}>
                 {props.deleteCity &&
                 <div className = {s.delete}>
-                  <button className = {s.button} onClick = { () => props.deleteCity(props.name) } > X </button>
+                  <Button className={s.button} onClick = { () => props.deleteCity(props.name) } >  <DeleteIcon /> </Button>
                 </div>
                 }
                 <div className = {s.location}>

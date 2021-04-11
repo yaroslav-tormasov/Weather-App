@@ -14,6 +14,6 @@ export default class Time extends Component {
         }, 1000)
     }
     render() {
-        return <h2 className="time" >{this.state.time}</h2>;
+        return <h2>{this.state.time}</h2>;
     }
 }
