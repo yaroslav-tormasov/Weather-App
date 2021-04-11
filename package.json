@@ -16,7 +16,7 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "http://yaroslav-tormasov.github.io/Weather-App",
+  "homepage": "https://yaroslav-tormasov.github.io/Weather-App",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
