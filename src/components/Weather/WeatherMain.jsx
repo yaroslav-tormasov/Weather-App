@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import Main from './Main';
 import {weatherApi} from '../../api/api';
 import Searching from './Searching';
@@ -28,32 +28,32 @@ const WeatherMain = () => {
 
     }, []);
 
+    const getWeatherByName = useCallback((cityName) => {
+        if( !locations.some( loc => loc.name === cityName ) ){
+            setIsLoader(true);
+            weatherApi.byCityName(cityName)
+                .then( res => {
+
+                    let {temp, feels_like} = res.data.main;
+                    let {description, main:icon} = res.data.weather[0];
+
+                    setLocations( prevLocations => [ {temp, feels_like, name: cityName, description, icon, id: 1} , ...prevLocations ] );
+                    setIsLoader(false);
+                } )
+                .catch( () => {
+                    alert(`Город ${cityName} не найден :(`)
+                });
+        } else alert(`Вы уже добавили город ${cityName}`)
+    }, [locations])
+
     useEffect( () => {
         let elements  = JSON.parse( localStorage.getItem('locations') ) || [];
         elements.forEach( elem => getWeatherByName(elem) );
-    },[])
+    },[getWeatherByName])
 
     useEffect( () => {
         localStorage.setItem( 'locations', JSON.stringify( locations.map( elem => elem.name ) ) )
     }, [locations] )
-
-    const getWeatherByName = (cityName) => {
-        if( !locations.some( loc => loc.name === cityName ) ){
-            setIsLoader(true);
-            weatherApi.byCityName(cityName)
-            .then( res => {
-    
-                let {temp, feels_like} = res.data.main;
-                let {description, main:icon} = res.data.weather[0];
-                
-                setLocations( prevLocations => [ {temp, feels_like, name: cityName, description, icon, id: 1} , ...prevLocations ] );
-                setIsLoader(false);
-            } )
-            .catch( () => {
-                alert(`Город ${cityName} не найден :(`)
-            });
-        } else alert(`Вы уже добавили город ${cityName}`)
-    }
 
     const deleteCity = (cityName) => {
         setLocations( prevLocations => prevLocations.filter( loc => loc.name !== cityName ) );
