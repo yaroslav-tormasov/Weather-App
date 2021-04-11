@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 import Main from './Main';
 import {weatherApi} from '../../api/api';
 import Searching from './Searching';
@@ -28,7 +28,7 @@ const WeatherMain = () => {
 
     }, []);
 
-    const getWeatherByName = useCallback((cityName) => {
+    const getWeatherByName = (cityName) => {
         if( !locations.some( loc => loc.name === cityName ) ){
             setIsLoader(true);
             weatherApi.byCityName(cityName)
@@ -44,12 +44,12 @@ const WeatherMain = () => {
                     alert(`Город ${cityName} не найден :(`)
                 });
         } else alert(`Вы уже добавили город ${cityName}`)
-    }, [locations])
+    }
 
     useEffect( () => {
         let elements  = JSON.parse( localStorage.getItem('locations') ) || [];
         elements.forEach( elem => getWeatherByName(elem) );
-    },[getWeatherByName])
+    },[])
 
     useEffect( () => {
         localStorage.setItem( 'locations', JSON.stringify( locations.map( elem => elem.name ) ) )
