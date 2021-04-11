@@ -1,4 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Приложение прогноза погоды на ReactJS (OpenWeather API)
+## Использовать приложение по ссылке [тут](https://yaroslav-tormasov.github.io/Weather-App/)
+### Приложение для прогноза погоды, показа текущего времени и даты. Определяет Вашу геопозицию и показывает погоду. Реализовано поле ввода для поиска других городов.    
 
