@@ -9,7 +9,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <Route path={"/"} exact render={() => <Header />}/>
+                <Route path={"/LapStore"}  render={() => <Header />}/>
                 <Menu/>
                 <Home/>
             </div>
